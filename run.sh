@@ -1,0 +1,1 @@
+clang++ -std=c++17 -g main.cpp wal.cpp memtable.cpp -o main && ./main
