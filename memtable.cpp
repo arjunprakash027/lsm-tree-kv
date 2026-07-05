@@ -1,4 +1,5 @@
 #include "memtable.hpp"
+#include "sstable.hpp"
 
 Memtable::Memtable(const std::string& walPath) : wal_(walPath) {
 }
@@ -14,5 +15,10 @@ std::optional<std::string> Memtable::get(const std::string& key) const {
         return std::nullopt;
     }
     return it->second;
+}
+
+void Memtable::flush() {
+    SSTable table(data_);
+    data_.clear();
 }
 

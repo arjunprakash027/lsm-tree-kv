@@ -13,5 +13,8 @@ int main() {
     } else {
         std::cout << "not found key\n";
     }
+
+    mt.flush();
+    
 }
 
